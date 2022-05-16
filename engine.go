@@ -41,6 +41,7 @@ func (e *Engine) Bucket(name string) (*Bucket, error) {
     b = &Bucket{
         db: db,
     }
+    e.buckets[name] = b
     return b, nil
 }
 func (e *Engine) CloseBucket(name string) error {
