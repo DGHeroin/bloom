@@ -3,7 +3,6 @@ package bloom
 import (
     "github.com/syndtr/goleveldb/leveldb"
     "github.com/syndtr/goleveldb/leveldb/util"
-    "log"
 )
 
 type (
@@ -39,7 +38,6 @@ func (b *Bucket) Count(from, to []byte) (n uint32) {
     defer it.Release()
 
     for it.Next() {
-        log.Println("form:", string(from), string(it.Key()), it.Value())
         n++
     }
 
